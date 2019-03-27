@@ -6,7 +6,7 @@ describe("fetch", () => {
 	let engine, sessionID;
 
 	before(done => {
-		engine = require("../index.js");
+		engine = require("../../index.js");
 		engine.authorize(
 			{
 				password: password,
