@@ -4,7 +4,7 @@ const password = process.env["DEXCOM_PASSWORD"]
 
 describe("authorize_fetch", () => {
 	it("should return a list of recent entries when called with valid credentials", done => {
-		const engine = require("../index.js");
+		const engine = require("../../index.js");
 		const maxCount = 3;
 		engine.authorize_fetch(
 			{
@@ -36,7 +36,7 @@ describe("authorize_fetch", () => {
 	});
 
 	it("should return an error when called with invalid credentials", done => {
-		const engine = require("../index.js");
+		const engine = require("../../index.js");
 		engine.authorize_fetch(
 			{
 				login: {

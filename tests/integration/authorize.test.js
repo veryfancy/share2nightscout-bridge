@@ -4,7 +4,7 @@ const password = process.env["DEXCOM_PASSWORD"]
 
 describe("authorize", () => {
 	it("should succeed and return a session ID when called with valid credentials", done => {
-		const engine = require("../index.js");
+		const engine = require("../../index.js");
 		engine.authorize(
 			{
 				password: password,
@@ -22,7 +22,7 @@ describe("authorize", () => {
 	});
 
 	it("should return expected error when called with invalid credentials", done => {
-		const engine = require("../index.js");
+		const engine = require("../../index.js");
 		engine.authorize(
 			{
 				password: "notarealpassword",
