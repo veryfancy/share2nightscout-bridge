@@ -25,6 +25,7 @@
 var request = require('request');
 var qs = require('querystring');
 var crypto = require('crypto');
+var readENV = require('./readENV');
 var dex_to_entry = require('./dex_to_entry');
 
 // Defaults
@@ -226,16 +227,6 @@ engine.fetch = fetch;
 engine.authorize = authorize;
 engine.authorize_fetch = do_everything;
 module.exports = engine;
-
-function readENV(varName, defaultValue) {
-    //for some reason Azure uses this prefix, maybe there is a good reason
-    var value = process.env['CUSTOMCONNSTR_' + varName]
-        || process.env['CUSTOMCONNSTR_' + varName.toLowerCase()]
-        || process.env[varName]
-        || process.env[varName.toLowerCase()];
-
-    return value || defaultValue;
-}
 
 // If run from commandline, run the whole program.
 if (!module.parent) {
